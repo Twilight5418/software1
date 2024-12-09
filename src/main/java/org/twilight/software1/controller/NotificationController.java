@@ -38,6 +38,10 @@ public class NotificationController {
         }
     }
 
+    /**
+     *获得所有通知
+     * @return
+     */
     @GetMapping("/notifications")
     public ResponseEntity<ApiResponse<List<Notification>>> getAllNotifications() {
         List<Notification> notifications = notificationService.getAllNotifications();
