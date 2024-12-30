@@ -18,8 +18,13 @@ public interface ThesisProposalMapper extends BaseMapper<ThesisProposal> {
     @Results({
             @Result(property = "id", column = "id"),
             // 映射ThesisProposal的其他属性
-            @Result(property = "review.reviewId", column = "review_id"),
+            @Result(property = "review.isApproved", column = "is_approved"),
             // 映射Review的其他属性
     })
     List<ThesisProposal> getAllProposalsWithReview();
+
+    @Select("SELECT * FROM thesis_proposal tp " +
+            "LEFT JOIN review r ON tp.id = r.review_id " +
+            "WHERE tp.teacher_name = #{teacherName}")
+    List<ThesisProposal> getProposalsByTeacherNameWithReview(String teacherName);
 }

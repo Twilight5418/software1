@@ -29,9 +29,7 @@ public class ThesisProposalServiceImpl implements ThesisProposalService {
 
     @Override
     public List<ThesisProposal> getProposalsByTeacherName(String teacherName) {
-        QueryWrapper<ThesisProposal> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("teacher_name", teacherName); // 假设数据库字段为 teacher_name
-        return thesisProposalMapper.selectList(queryWrapper);
+        return thesisProposalMapper.getProposalsByTeacherNameWithReview(teacherName);
     }
 
     @Override
