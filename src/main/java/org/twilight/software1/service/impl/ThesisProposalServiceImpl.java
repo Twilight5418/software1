@@ -36,6 +36,6 @@ public class ThesisProposalServiceImpl implements ThesisProposalService {
 
     @Override
     public List<ThesisProposal> getAllProposals() {
-        return thesisProposalMapper.selectList(null); // 查询所有记录
+        return thesisProposalMapper.getAllProposalsWithReview(); // 查询所有记录
     }
 }

@@ -21,4 +21,5 @@ public class ThesisProposal {
     private String targetMajor;
     private String contactInfo;
     private String thesisTitle;
+    private Review review;// 关联 Review 实体类
 }
