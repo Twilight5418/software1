@@ -22,9 +22,7 @@ public class StudentThesisSelectionServiceImpl implements StudentThesisSelection
 
     @Override
     public List<StudentThesisSelection> getSelectedThesesByStudentId(String studentId) {
-        return studentThesisSelectionMapper.selectList(
-                new QueryWrapper<StudentThesisSelection>().eq("student_id", studentId)
-        );
+        return studentThesisSelectionMapper.getSelectedThesesWithProposalInfoByStudentId(studentId);
     }
 
 }
